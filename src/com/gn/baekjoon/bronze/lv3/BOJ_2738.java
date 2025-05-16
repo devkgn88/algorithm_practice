@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 /**
- * 레벨 : 브론즈 5
+ * 레벨 : 브론즈 3
  * 문제 번호: 2738
  * 문제명: 행렬 덧셈
  * 문제 링크: https://www.acmicpc.net/problem/2738

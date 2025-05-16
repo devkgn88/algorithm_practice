@@ -2,6 +2,12 @@ package com.gn.baekjoon.bronze.lv4;
 
 import java.util.Scanner;
 
+/**
+ * 레벨 : 브론즈 4
+ * 문제 번호: 2439
+ * 문제명: 별찍기 -2
+ * 문제 링크: https://www.acmicpc.net/problem/2439
+ */
 public class BOJ_2439 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
