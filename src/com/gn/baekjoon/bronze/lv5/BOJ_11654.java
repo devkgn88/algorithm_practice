@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 /**
  * 레벨 : 브론즈 5
  * 문제 번호: 11654
- * 문제명: char
+ * 문제명: 아스키코드
  * 문제 링크: https://www.acmicpc.net/problem/11654
  */
 public class BOJ_11654 {
