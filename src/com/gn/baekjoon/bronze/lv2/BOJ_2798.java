@@ -5,26 +5,14 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+/**
+ * 레벨 : 브론즈 2
+ * 문제 번호: 2798
+ * 문제명: 블랙잭
+ * 문제 링크: https://www.acmicpc.net/problem/2798
+ */
 public class BOJ_2798 {
 	public static void main(String[] args) {
-		// 5 21
-		// 5 6 7 8 9
-		
-		// 0 1 2 3 4
-		
-		// 0 1 2
-		// 0 1 3
-		// 0 1 4
-		// 0 2 3
-		// 0 2 4
-		// 0 3 4
-		
-		// 1 2 3
-		// 1 2 4
-		// 1 3 4
-		
-		// 2 3 4
-		
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));){
 			
@@ -37,22 +25,17 @@ public class BOJ_2798 {
 			
 			int sum = 0;
 			
-			Loop1 : 
 			for(int a = 0 ; a <= n-3 ; a++ ) {
-				Loop2 : 
-				for(int b = 1 ; b <= n-2 ; b++) {
-					Loop3 : 
-					for(int c = 2 ; c <= n-1 ; c++) {
-						if(a < b && b < c) {
-							int temp = Integer.parseInt(num[a])
-									+ Integer.parseInt(num[b])
-									+ Integer.parseInt(num[c]);
-							if(m < temp) break Loop1; 
-							
-							if(m-temp < m-sum) {
-								sum = temp;
-							}
+				for(int b = a+1 ; b <= n-2 ; b++) {
+					for(int c = b+1 ; c <= n-1 ; c++) {
+						int temp = Integer.parseInt(num[a])
+								+ Integer.parseInt(num[b])
+								+ Integer.parseInt(num[c]);
+						
+						if(temp <= m && m-temp < m-sum) {
+							sum = temp;
 						}
+
 					}
 				}
 			}
