@@ -7,9 +7,7 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 레벨 : 실버 5
@@ -18,42 +16,47 @@ import java.util.Map;
  * 문제 링크: https://www.acmicpc.net/problem/11650
  */
 public class BOJ_11650 {
+	
+	static class Point {
+		int x,y;
+		
+		Point(){};
+		Point(int x, int y){
+			this.x = x; 
+			this.y = y;
+		}
+	}
+	
 	public static void main(String[] args) {
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));){	
 			
 			int n = Integer.parseInt(br.readLine().trim());
+			List<Point> list = new ArrayList<Point>();
 			
-			List<Map<String,Integer>> list = new ArrayList<Map<String,Integer>>(); 
-
 			for(int i = 0 ; i < n ; i++) {
-				String[] line = br.readLine().trim().split("\\s+");
-				int one = Integer.parseInt(line[0]);
-				int two = Integer.parseInt(line[1]);
-				
-				Map<String,Integer> map = new HashMap<String,Integer>();
-				map.put("x", one);
-				map.put("y", two);
-				list.add(map);
+				String[] parts = br.readLine().trim().split("\\s+");
+                int x = Integer.parseInt(parts[0]);
+                int y = Integer.parseInt(parts[1]);
+                list.add(new Point(x, y));
 			}
-						
-			Collections.sort(list, new Comparator<Map<String,Integer>>() {
+			
+			Collections.sort(list, new Comparator<Point>() {
 				@Override
-				public int compare(Map<String,Integer> s1, Map<String,Integer> s2) {
-					int xCompare = Integer.compare(s1.get("x"), s2.get("x"));
-					if (xCompare != 0) {
+				public int compare(Point p1, Point p2) {
+					int xCompare = Integer.compare(p1.x, p2.x);
+					if(xCompare != 0) {
 						return xCompare;
-					} else {
-						return Integer.compare(s1.get("y"), s2.get("y"));
+					}else {
+						return Integer.compare(p1.y, p2.y);
 					}
 				}
 			});
 			
-			for(int i = 0 ; i < list.size() ; i++) {
-				bw.write(list.get(i).get("x")+" "+list.get(i).get("y"));
+			for(Point p : list) {
+				bw.write(p.x+" "+p.y);
 				bw.newLine();
 			}
-			
 			
 		}catch(Exception e) {
 			e.printStackTrace();
