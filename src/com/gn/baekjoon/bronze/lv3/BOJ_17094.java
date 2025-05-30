@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 /**
- * 레벨 : 브론즈 5
+ * 레벨 : 브론즈 3
  * 문제 번호: 17094
  * 문제명: Serious Problem
  * 문제 링크: https://www.acmicpc.net/problem/17094
