@@ -5,55 +5,42 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+/**
+ * 레벨 : 브론즈 1
+ * 문제 번호: 14626
+ * 문제명: ISBN
+ * 문제 링크: https://www.acmicpc.net/problem/14626
+ */
 public class BOJ_14626 {
 	public static void main(String[] args) {
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));){
 			
-			String[] arr = br.readLine().trim().split("");
-			int leng = arr.length;
-			
-			int sum = 0;
-			int idx = leng-1;
-			int multi = 1;
-			
-			for(int i = 0 ; i < arr.length-1 ; i++) {
-				if(arr[i].equals("*")) {
-					idx = i;
-					if(i%2 != 0) multi = 3;
-				}else {
-					if(i%2 == 0) {
-						sum += Integer.parseInt(arr[i]);
-					}else {
-						sum += Integer.parseInt(arr[i])*3;
-					}
-				}
-			}
-			
+			String str = br.readLine().trim();
 			int result = 0;
-			
-			if(idx == leng-1) {
-				if(sum % 10 == 0 ) {
-					result = 0;
-				}else {
-					result = 10-(sum % 10);
-					
-				}
-			} else {
-				if(10-(sum%10) == Integer.parseInt(arr[leng-1])) {
-					result = 0;
-				}else {
-					for(int i = 0 ; i <= 9 ; i++) {
-						if((sum + (multi*i)) % 10 == Integer.parseInt(arr[leng-1])) {
-							result = 10-i;
-							break;
-						}
+						
+			for(int i = 0 ; i <= 9 ;i++) {
+				String temp = str.replace("*", String.valueOf(i));
+								
+				String[] arr = temp.split("");
+				int sum = 0;
+				
+				for(int j = 0 ; j < arr.length ; j++) {
+					if(j%2 == 0) {
+						sum += Integer.parseInt(arr[j]);
+					}else {
+						sum += Integer.parseInt(arr[j])*3;
 					}
-					
 				}
+				
+				if(sum % 10 == 0) {
+					result = i;
+					break;
+				}
+				
 			}
 			
-			bw.write(String.valueOf(result));
+			bw.write(result >= 10 ? String.valueOf(result-10) : String.valueOf(result));
 			
 		}catch(Exception e) {
 			e.printStackTrace();
