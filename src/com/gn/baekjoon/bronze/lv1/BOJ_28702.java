@@ -10,6 +10,7 @@ import java.io.OutputStreamWriter;
  * 문제 번호: 28702
  * 문제명: FizzBuzz
  * 문제 링크: https://www.acmicpc.net/problem/28702
+ * 히스토리 : 컴파일 에러 1회 발생(import 빠짐)
  */
 public class BOJ_28702 {
 	public static void main(String[] args) {
