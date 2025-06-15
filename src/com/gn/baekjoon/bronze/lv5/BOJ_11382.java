@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
  * 문제명: 꼬마 정민
  * 문제 링크: https://www.acmicpc.net/problem/11382
  */
-public class BOj_11382 {
+public class BOJ_11382 {
 	public static void main(String[] args) {
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

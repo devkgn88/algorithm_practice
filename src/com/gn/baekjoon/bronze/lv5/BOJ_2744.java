@@ -11,7 +11,7 @@ import java.io.OutputStreamWriter;
  * 문제명: 대소문자 바꾸기
  * 문제 링크: https://www.acmicpc.net/problem/2744
  */
-public class BOj_2744 {
+public class BOJ_2744 {
 	public static void main(String[] args) {
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 				BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));){
