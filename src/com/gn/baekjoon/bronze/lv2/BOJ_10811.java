@@ -5,41 +5,58 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+/**
+ * 레벨 : 브론즈 2
+ * 문제 번호: 10811
+ * 문제명: 바구니 뒤집기
+ * 문제 링크: https://www.acmicpc.net/problem/10811
+ */
 public class BOJ_10811 {
 	public static void main(String[] args) {
 		
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));){
 			
-			String[] temp = br.readLine().trim().split("\\s+");
+			String[] nm = br.readLine().trim().split("\\s+");
 			
-			int n = Integer.parseInt(temp[0]);
-			int m = Integer.parseInt(temp[1]);
+			int n = Integer.parseInt(nm[0]);
+			int m = Integer.parseInt(nm[1]);
 			
-			StringBuilder basket = new StringBuilder("");
-			for(int a = 1 ; a <= n ; a++) {
-				basket.append(a);
+			int[] basket = new int[n];
+			
+			for(int a = 0 ; a < basket.length ; a++) {
+				basket[a] = a+1;
 			}
 			
 			for(int a = 0 ; a < m ; a++) {
 				
-				String[] arr = br.readLine().trim().split("\\s+");
+				String[] ij = br.readLine().trim().split("\\s+");
+				int i = Integer.parseInt(ij[0]);
+				int j = Integer.parseInt(ij[1]);
 				
-				int i = Integer.parseInt(arr[0]);
-				int j = Integer.parseInt(arr[1]);
+				int[] portion = new int[n];
 				
-				StringBuilder potion = new StringBuilder("");
-				potion.append(basket.substring(i-1, j));
-				potion.reverse();
+				int idx = 0;
 				
-				basket.delete(i-1, j);
-				basket.insert(i-1, potion);
+				for(int b = 0 ; b < i-1 ; b++) {
+					portion[idx] = basket[b];
+					idx++;
+				}
+				
+				for(int c = j-1 ; i-1 <= c ; c--) {
+					portion[idx] = basket[c];
+					idx++;
+				}
+				
+				for(int d = j ; d < basket.length ; d++) {
+					portion[idx] = basket[d];
+					idx++;
+				}
+				basket = portion; 
 			}
 			
-			for(int i = 0 ; i < basket.length() ; i++) {
-				bw.write(basket.charAt(i));
-				if(i+1 == basket.length()) break;
-				bw.write(" ");
+			for(int a = 0 ; a < basket.length ; a++) {
+				bw.write(basket[a]+" ");
 			}
 			
 			
