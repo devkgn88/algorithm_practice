@@ -16,26 +16,30 @@ public class BOJ_10811 {
 			int n = Integer.parseInt(temp[0]);
 			int m = Integer.parseInt(temp[1]);
 			
-			StringBuilder sb = new StringBuilder("");
+			StringBuilder basket = new StringBuilder("");
 			for(int a = 1 ; a <= n ; a++) {
-				sb.append(a+"");
+				basket.append(a);
 			}
 			
 			for(int a = 0 ; a < m ; a++) {
+				
 				String[] arr = br.readLine().trim().split("\\s+");
+				
 				int i = Integer.parseInt(arr[0]);
 				int j = Integer.parseInt(arr[1]);
 				
-				StringBuilder x = new StringBuilder(sb.substring(i-1, j));
-				StringBuilder y = sb.replace(i-1, j, "");
-
+				StringBuilder potion = new StringBuilder("");
+				potion.append(basket.substring(i-1, j));
+				potion.reverse();
 				
-				x.reverse();
-				sb.insert(i-1, x);
+				basket.delete(i-1, j);
+				basket.insert(i-1, potion);
 			}
 			
-			for(int a = 0 ; a < sb.length() ; a++) {
-				bw.write(sb.charAt(a)+" ");
+			for(int i = 0 ; i < basket.length() ; i++) {
+				bw.write(basket.charAt(i));
+				if(i+1 == basket.length()) break;
+				bw.write(" ");
 			}
 			
 			
