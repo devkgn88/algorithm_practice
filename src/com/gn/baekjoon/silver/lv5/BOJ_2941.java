@@ -18,14 +18,11 @@ public class BOJ_2941 {
 			
 			String word = br.readLine().trim();
 			
-			word = word.replace("c=", "5");
-			word = word.replace("c-", "5");
-			word = word.replace("dz=", "5");
-			word = word.replace("d-","5");
-			word = word.replace("lj", "5");
-			word = word.replace("nj", "5");
-			word = word.replace("s=", "5");
-			word = word.replace("z=", "5");
+			String[] arr = new String[] {"c=","c-","dz=","d-","lj","nj","s=","z="};
+			
+			for(String a : arr) {
+				word = word.replace(a,"5");
+			}
 			
 			bw.write(String.valueOf(word.length()));
 			
