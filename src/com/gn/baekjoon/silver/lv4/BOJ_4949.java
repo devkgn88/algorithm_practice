@@ -7,6 +7,12 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * 레벨 : 실버 4
+ * 문제 번호: 4949
+ * 문제명: 균형잡힌 세상
+ * 문제 링크: https://www.acmicpc.net/problem/4949
+ */
 public class BOJ_4949 {
 	public static void main(String[] args) {
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -39,6 +45,8 @@ public class BOJ_4949 {
 						}
 					}
 				}
+				
+				if(d.size() != 0) result = "no";
 				
 				bw.write(result);
 				bw.newLine();
