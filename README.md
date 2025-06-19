@@ -43,6 +43,5 @@ public class BOJ_문제번호 {
 ## 🏅 백준 티어
 > [!NOTE]
 > 아래 뱃지는 백준에서의 실시간 티어를 나타냅니다.<br>
-> 매일 한 문제씩 정상에 가까워지는 저를 지켜봐주세요.<br>
 
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=devkgn88)](https://solved.ac/devkgn88/)
