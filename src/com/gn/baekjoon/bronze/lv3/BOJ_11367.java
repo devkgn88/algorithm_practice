@@ -42,7 +42,7 @@ public class BOJ_11367 {
 				}
 				
 			}
-			
+			bw.flush();
 			
 		} catch(Exception e) {
 			e.printStackTrace();
