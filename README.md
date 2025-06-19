@@ -1,3 +1,4 @@
+<a href="https://myhits.vercel.app"><img src="https://myhits.vercel.app/api/hit/https%3A%2F%2Fgithub.com%2Fdevkgn88%2Falgorithm_practice?color=green&label=hits&size=small" alt="hits" /></a>
 # 🧠 Algorithm Practice
 이 저장소는 백준(Baekjoon) 등 다양한 플랫폼의 문제를 **Java로 풀이하며 기록**하는 공간입니다.
 
