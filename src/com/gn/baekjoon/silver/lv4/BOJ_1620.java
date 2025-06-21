@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BOJ_1620 {
 	public static void main(String[] args) {
@@ -13,26 +15,24 @@ public class BOJ_1620 {
 			String[] temp = br.readLine().trim().split("\\s+");
 			int n = Integer.parseInt(temp[0]);
 			int m = Integer.parseInt(temp[1]);
+
+			List<String> list = new ArrayList<String>();
 			
-			String[] arr = new String[n];
-			for(int i = 0 ; i < arr.length ; i++) {
+			for(int i = 0 ; i < n ; i++) {
 				String name = br.readLine().trim();
-				arr[i] = name;
+				list.add(name);
 			}
 			
 			for(int i = 0 ; i < m ; i++) {
-				Object o = br.readLine();
-				if(o instanceof String) {
-					for(int j = 0 ; j < arr.length ; j++) {
-						if(arr[j].equals((String)o)) {
-							bw.write((j+1)+"\n");
-							break;
-						}
-					}
-				} else {
-					bw.write(arr[(int)o-1]+"\n");
+				int num = 0 ;
+				String str = null;
+				try {
+					str = br.readLine().trim();
+					num = Integer.parseInt(str);
+					bw.write(String.valueOf(list.get(num-1))+"\n");
+				}catch(NumberFormatException e) {
+					bw.write(String.valueOf(list.indexOf(str)+1)+"\n");
 				}
-				bw.flush();
 			}
 			
 		}catch(Exception e) {
